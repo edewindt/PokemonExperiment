@@ -5,11 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
+    <script src="monsters.js" defer></script>
     <script src="index.js" defer></script>
+    <script src="battle.js" defer></script>
     <script src="classes.js"></script>
     <script src="battlezones.js"></script>
     <script src="collisions.js"></script>
     <script src="attacks.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,12 +71,9 @@
         </div>
         <canvas></canvas>
         <div style="background-color: black; height: 140px; position:absolute; bottom:0;left:0; right:0;border:4px rgb(126, 126, 126) solid; display: flex;">
-            <div id="dialogueBox" style="position: absolute; top: 0; right: 0; left:0; bottom: 0; background-color: aliceblue; padding: 12px; color: black; display: none;">Yes you are</div>
-        <div style="width: 66.66% ; display: grid; grid-template-columns:repeat(2, 1fr);">
-            <button id="Tackle">Tackle</button>
-            <button id="Fireball">Fireball</button>
-            <button>Attack 3</button>
-            <button>Attack 4</button>
+            <div id="dialogueBox" style="position: absolute; top: 0; right: 0; left:0; bottom: 0; background-color: aliceblue; padding: 12px; color: black; display: none; cursor: pointer;">Yes you are</div>
+        <div id="attacksBox" style="width: 66.66% ; display: grid; grid-template-columns:repeat(2, 1fr);">
+            
         </div>
         <div style="display: flex; justify-content:center; align-items:center; width:33.33%; border-left: 4px black solid;">
             <h1>Attack Type</h1>
