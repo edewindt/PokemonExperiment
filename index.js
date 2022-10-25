@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-// audio.Map.play()
+
 canvas.width = 1024;
 canvas.height = 576;
 const collisionMap = []
@@ -138,6 +138,9 @@ function animate() {
                 //Deactivate old Animation
                  window.cancelAnimationFrame(animationId)
 
+                 audio.Map.stop()
+                 audio.initBattle.play()
+                 audio.battle.play()
                  battle.initiated = true
                  gsap.to('#overlappingDiv', {
                     opacity: 1,
@@ -300,5 +303,13 @@ window.addEventListener('keyup', (e) =>{
             break;
         default:
             break;
+    }
+})
+
+let clicked = false
+addEventListener('click', () => {
+    if(!clicked){
+        audio.Map.play()
+        clicked = true
     }
 })
