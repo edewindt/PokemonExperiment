@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-
+// audio.Map.play()
 canvas.width = 1024;
 canvas.height = 576;
 const collisionMap = []
@@ -38,7 +38,6 @@ battlezonesMap.forEach((row, i) => {
      }}))
     }) 
  })
-console.log(battleZones)
 const image = new Image();
 image.src = './img/Pokemon Mapz.png';
 
@@ -108,7 +107,6 @@ const battle = {
 
 function animate() {
     const animationId = window.requestAnimationFrame(animate)
-    console.log(animationId)
     background.draw()
     boundaries.forEach(boundary =>{
         boundary.draw()
@@ -137,7 +135,6 @@ function animate() {
                 overlappingArea > player.width * player.height / 2 &&
                 Math.random() < .01
                  ){
-                 console.log('battle')
                 //Deactivate old Animation
                  window.cancelAnimationFrame(animationId)
 
@@ -153,6 +150,7 @@ function animate() {
                             duration: 0.4,
                             onComplete(){
                             //Avtivate new Animation
+                            initBattle()
                             animateBattle()
                             gsap.to('#overlappingDiv', {
                                 opacity: 0,
@@ -183,7 +181,6 @@ function animate() {
                  }}
                 })
                  ){
-                 console.log('colliding')
                  moving = false
                  break
              }
@@ -207,7 +204,6 @@ function animate() {
              }}
             }) 
              ){
-             console.log('colliding')
              moving = false
              break
          }
@@ -229,7 +225,6 @@ function animate() {
                  }}
                 })
                  ){
-                 console.log('colliding')
                  moving = false
                  break
              }
@@ -251,7 +246,6 @@ function animate() {
                  }}
                 })
                  ){
-                 console.log('colliding')
                  moving = false
                  break
              }

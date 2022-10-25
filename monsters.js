@@ -1,8 +1,4 @@
-const embyImage = new Image()
-embyImage.src = './img/embySprite.png'
 
-const draggleImage = new Image()
-draggleImage.src = './img/draggleSprite.png'
 
 const monsters = {
     Emby: {
@@ -10,7 +6,9 @@ const monsters = {
             x:280,
             y:325
         },
-        image: embyImage,
+        image: {
+            src: './img/embySprite.png'
+        },
         frames:{
             max:4,
             hold:30
@@ -24,7 +22,9 @@ const monsters = {
                 x:800,
                 y:100
             },
-            image: draggleImage,
+            image: {
+                src: './img/draggleSprite.png'
+            },
             frames:{
                 max:4,
                 hold:30
@@ -32,6 +32,6 @@ const monsters = {
             animate: true,
             isEnemy: true,
             name: 'Draggle',
-            attacks: [attacks.Tackle]
+            attacks: [attacks.Tackle, attacks.Fireball]
         }
 }
